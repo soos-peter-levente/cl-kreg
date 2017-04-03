@@ -53,7 +53,7 @@
                 when (= 1 (aref (g-matrix graph) i j))
                 collect j)))
 
-(defun graph->dot (graph &optional (oname "testgraph.dot"))
+(defun graph->dot (graph &optional (oname "/tmp/graph.dot"))
   (let ((data (graph->list graph)))
     (with-open-file (o oname :direction :output :if-exists :supersede)
       (format o "graph random {~%graph [splines=true overlap=scale]~%")
